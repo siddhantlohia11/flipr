@@ -1,0 +1,394 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<title>Investo</title>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+		<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=PT+Sans+Caption:wght@700&display=swap" rel="stylesheet">
+		
+		<style>
+			html {
+  				scroll-behavior: smooth;
+			}
+		</style>
+</head>
+
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+		
+			<!-- Header -->
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="/" class="navbar-brand logo">
+							<!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
+							<h3>INVESTO</h3>
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="/" class="menu-logo">
+								<!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
+								<h3>INVESTO</h3>
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li class="active">
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/dashboard">Dashbaord </a>
+							</li>	
+							<li>
+								<a href="#">FAQs </a>
+							</li>	
+							<li class="">
+								<a href="#">About us</a>
+							</li>
+							
+							<li class="login-link">
+								<a href="/logout">Logout</a>
+							</li>
+						</ul>		 
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +91 9166784668</p>
+							</div>
+						</li>
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="<%= image %>" width="31" alt="First Name">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="<%= image %>" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6><%=firstName %> <%=lastName %></h6>
+									</div>
+								</div>
+								<a class="dropdown-item" href="/dashboard">Dashboard</a>
+								<a class="dropdown-item" href="/profile-settings">Profile Settings</a>
+								<a class="dropdown-item" href="/logout">Logout</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+		
+
+		     <div class="containerr">
+			    <img src="https://ak.picdn.net/shutterstock/videos/7508011/thumb/1.jpg" alt="broker" width="100%">
+			    <div style=" height: 100%; width: 100%; text-align: center;" class="overlay">
+			        <p style="color: white; padding-top: 10%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%;">Make the most of your investments with our simple and technologically advanced online investing and trading platforms</p>
+			    	<div class="arrow bounce">
+  						<a style="color: #09E5AB; text-decoration: none;" class="fa fa-arrow-down fa-1x" href="#section-specialities"></a>
+					</div>
+			    </div>
+			</div>
+				
+			  
+			<section id="section-specialities" class="section section-specialities">
+				<div class="container-fluid">
+					<div class="section-header text-center">
+						<h2>Where Can I Invest?</h2>
+						<p class="sub-title">With this Demat Account you can trade in all segments. 
+						Enjoy trading with an All-in-One Account</p>
+					</div>
+					<div class="row justify-content-center">
+						<div style="text-align: center; margin-left: 5%;" class="col">
+							<h1 style="color: #418FDE;">Equity</h1>
+							<p> It is money in exchange for a share of ownership in the company.</p>
+						</div>
+						<div style="text-align: center; margin-left: 5%; margin-right: 5%;" class="col">
+							<h1 style="color: #418FDE;">Commodity</h1>
+							<p>People who invest through the use of futures contracts or exchange-traded products (ETPs)</p>
+						</div>
+						<div style="text-align: center; margin-right: 5%;" class="col">
+							<h1 style="color: #418FDE;">Currency</h1>
+							<p>Each share represents an investor’s part ownership in the fund and the income it generates.</p>
+						</div>
+						<div style="text-align: center; margin-right: 5%;" class="col">
+							<h1 style="color: #418FDE;">Derivative</h1>
+							<p>Each share represents an investor’s part ownership in the fund and the income it generates.</p>
+						</div>
+					</div>
+				</div>   
+			</section>	 
+		
+			<!-- Popular Section -->
+			<section class="section section-doctor">
+				<div class="container-fluid">
+				   <div class="row">
+						<div class="col-lg-4">
+							<div class="section-header ">
+								<h2>Our Customers</h2>
+							</div>
+							<div class="about-content">
+								<p>Here’s what our Customer’s say</p>
+								<p>We have been recognised as ‘Emerging Company of the Year’ in BFSI space category. The award honours the business leaders in the respective ling-of business (segment).</p>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="doctor-slider slider">
+							
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="#">
+											<img class="img-fluid" alt="User Image" src="assets/img/doctors/doctor-01.jpg">
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="#">Sasha Milinkovic</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<!-- <p class="speciality">Review:</p> -->
+										<p class="speciality">"I have been using this platform for around a year and I must say, the services offered at the this price point are really remarkable"</p>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="#">
+											<img class="img-fluid" alt="User Image" src="https://i.insider.com/5d9e54243b33a72dc5019605?width=1100&format=jpeg&auto=webp">
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="#">David Sern</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<!-- <p class="speciality">Review:</p> -->
+										<p class="speciality">"They only has a set up office in Mumbai, apart from this, it does not have physical presence in any other part of India or world"</p>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="#">
+											<img class="img-fluid" alt="User Image" src="https://i0.wp.com/decider.com/wp-content/uploads/2019/06/designated-survivor-sasha.jpg?quality=80&strip=all&ssl=1">
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="#">Maria Stolem</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<!-- <p class="speciality">Review:</p> -->
+										<p class="speciality">"In my experience, this is by far the best trading app. Hassle free and very quick. I would hive 5/5. Highly recommended to all."</p>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+						
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="#">
+											<img class="img-fluid" alt="User Image" src="assets/img/doctors/doctor-01.jpg">
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="#">Rahul Verma</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<!-- <p class="speciality">Review:</p> -->
+										<p class="speciality">"In my experience, this is by far the best trading app. Hassle free and very quick. I would hive 5/5. Highly recommended to all."</p>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								<div class="profile-widget">
+									<div class="doc-img">
+										<a href="#">
+											<img class="img-fluid" alt="User Image" src="assets/img/doctors/doctor-01.jpg">
+									</div>
+									<div class="pro-content">
+										<h3 class="title">
+											<a href="#">Steve Austin</a> 
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<!-- <p class="speciality">Review:</p> -->
+										<p class="speciality">" They planned to commence trading in commodities and to offer personal loans in near future. Also, to include funding products."</p>
+									</div>
+								</div>
+								<!-- /Doctor Widget -->
+								
+								<!-- Doctor Widget -->
+								
+								
+							</div>
+						</div>
+				   </div>
+				</div>
+			</section>
+			<!-- /Popular Section -->
+		   
+		  
+			
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<h1 style="color: white;">Investo Services</h1>
+										<a href="#">
+											<img style="width: 45%; height: auto;" src="google-play-badge.png">
+										</a>
+										<a href="#">
+											<img style="width: 45%; height: auto;" src="https://connectpsychservices.com.au/wp-content/uploads/2020/03/apple-app-store.png">
+										</a>
+									</div>
+									<div class="footer-about-content">
+										<p>Copyright © 2020 Investo Services</p>
+										
+										<div class="social-icon">
+											<ul>
+												<li style="padding-left: 10%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+											
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">General</h2>
+									<ul>
+										<li><a href="/login"><i class="fas fa-angle-double-right"></i> Login</a></li>
+										<li><a href="/register"><i class="fas fa-angle-double-right"></i> Register</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Graphs</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i>FAQs</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">Policies</h2>
+									<ul>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Terms & Conditions</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Help</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Coontact Us</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Privacy</a></li>
+										<!-- <li><a href="#"><i class="fas fa-angle-double-right"></i> Doctor Dashboard</a></li> -->
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> 1234  ABC Street, XYZ,<br> India </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+91 9166784668
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											abc@email.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+	   </div>
+	   <!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Slick JS -->
+		<script src="assets/js/slick.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+<!-- doccure/  30 Nov 2019 04:11:53 GMT -->
+</html>

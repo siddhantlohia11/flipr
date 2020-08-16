@@ -1,0 +1,416 @@
+<!DOCTYPE html> 
+<html lang="en">
+	
+<head>
+	<meta charset="utf-8">
+	<title>Investo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	
+	<!-- Favicons -->
+	<link href="assets/img/favicon.png" rel="icon">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+	
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.stock.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+	  	var dps1 = [], dps2= [];
+		  var stockChart = new CanvasJS.StockChart("chartContainer",{
+		    theme: "light2",
+		    exportEnabled: true,
+		    title:{
+		      text:"Investo Charts"
+		    },
+		    subtitles: [{
+		      text: "<%= share%> Chart"
+		    }],
+		    charts: [{
+		      axisX: {
+		        crosshair: {
+		          enabled: true,
+		          snapToDataPoint: true
+		        }
+		      },
+		      axisY: {
+		        prefix: "₹"
+		      },
+		      data: [{
+		        type: "candlestick",
+		        yValueFormatString: "₹#,##,###.##",
+		        dataPoints : dps1
+		      }]
+		    }],
+		    navigator: {
+		      data: [{
+		        dataPoints: dps2
+		      }],
+		      slider: {
+		        minimum: new Date(2018, 04, 01),
+		        maximum: new Date(2018, 06, 01)
+		      }
+		    }
+		  })
+
+		  var dataa = '<%- JSON.stringify(dataaa)%>';
+		  console.log(dataa[0].date);
+		  dataa = JSON.parse(dataa);
+		  // console.log(dataa);
+
+	    	for(var i = 0; i < dataa.length; i++){
+	      		dps1.push({x: new Date(dataa[i].date), y: [Number(dataa[i].open), Number(dataa[i].high), Number(dataa[i].low), Number(dataa[i].close)]});
+	      		dps2.push({x: new Date(dataa[i].date), y: Number(dataa[i].close)});
+	    	}
+
+	    	stockChart.render();
+		}
+	</script>
+
+</head>
+
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+			
+			<!-- Header -->	 
+			<header class="header">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="/" class="navbar-brand logo">
+							<!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
+							<h3>INVESTO</h3>
+						</a>
+					</div>
+					<div class="main-menu-wrapper">
+						<div class="menu-header">
+							<a href="/" class="menu-logo">
+								<!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
+								<h3>INVESTO</h3>
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);">
+								<i class="fas fa-times"></i>
+							</a>
+						</div>
+						<ul class="main-nav">
+							<li class="active">
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/dashboard">Dashboard </a>
+							</li>	
+							<li>
+								<a href="#">FAQs </a>
+							</li>	
+							<li class="">
+								<a href="#">About us</a>
+							</li>
+							
+							<li class="login-link">
+								<a href="/logout">Logout</a>
+							</li>
+						</ul>		 
+					</div>		 
+					<ul class="nav header-navbar-rht">
+						<li class="nav-item contact-item">
+							<div class="header-contact-img">
+								<i class="far fa-hospital"></i>							
+							</div>
+							<div class="header-contact-detail">
+								<p class="contact-header">Contact</p>
+								<p class="contact-info-header"> +91 9166784668</p>
+							</div>
+						</li>
+						<li class="nav-item dropdown has-arrow logged-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="<%= image %>" width="31" alt="First Name">
+								</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="user-header">
+									<div class="avatar avatar-sm">
+										<img src="<%= image %>" alt="User Image" class="avatar-img rounded-circle">
+									</div>
+									<div class="user-text">
+										<h6><%=firstName %> <%=lastName %></h6>
+									</div>
+								</div>
+								<a class="dropdown-item" href="/dashboard">Dashboard</a>
+								<a class="dropdown-item" href="/profile-settings">Profile Settings</a>
+								<a class="dropdown-item" href="/logout">Logout</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- /Header -->
+			
+			<!-- Breadcrumb -->
+			<div class="breadcrumb-bar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-md-12 col-12">
+							<nav aria-label="breadcrumb" class="page-breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="/">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Graphs</li>
+								</ol>
+							</nav>
+							<h2 class="breadcrumb-title">Graphs</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Breadcrumb -->
+			
+			<!-- Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+
+					<div class="row">
+						
+						<!-- Profile Sidebar -->
+						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+							<div class="profile-sidebar">
+								<div class="widget-profile pro-widget-content">
+									<div class="profile-info-widget">
+										<a href="#" class="booking-doc-img">
+											<img src="<%= image %>" alt="User Image">
+										</a>
+										<div class="profile-det-info">
+											<h3><%=firstName %> <%=lastName %></h3>
+											<div class="patient-details">
+												<h5><i class="fas fa-birthday-cake"></i> <%= dateOfBirth %> </h5>
+												<h5><i class="fas fa-phone-square"></i> <%= tel %> </h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard-widget">
+									<nav class="dashboard-menu">
+										<ul>
+											<li >
+												<a href="/dashboard">
+													<i class="fas fa-columns"></i>
+													<span>Dashboard</span>
+												</a>
+											</li>
+											<li class="active">
+												<a href="#">
+													<i class="fas fa-calendar-check"></i>
+													<span>Graphs</span>
+												</a>
+											</li>
+											
+											<li>
+												<a href="/profile-settings">
+													<i class="fas fa-user-cog"></i>
+													<span>Profile Settings</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="fas fa-lock"></i>
+													<span>Change Password</span>
+												</a>
+											</li>
+											<li>
+												<a href="/">
+													<i class="fas fa-sign-out-alt"></i>
+													<span>Logout</span>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+
+							</div>
+						</div>
+						<!-- / Profile Sidebar -->
+						
+						<div class="col-md-7 col-lg-8 col-xl-9">
+							<div class="card">
+								<div class="card-body pt-0 ">
+
+									<div class="tab-content pt-0">
+										
+										<!-- Appointment Tab -->
+										<div id="pat_appointments" class="tab-pane fade show active">
+											<div class="card card-table mb-0">
+												<div class="card-body">
+													<form action="/graphs" method="POST">
+													    <select name="q" id="q" onchange="this.form.submit()">
+													    	<option value=""> Choose One </option>
+													        <option value="Reliance">Reliance</option>
+													        <option value="Tatasteel">Tatasteel</option>
+													        <option value="Cipla">Cipla</option>
+													        <option value="Ashokley">Ashokley</option>
+													        <option value="Eichermot">Eichermot</option>
+													    </select>
+													</form>
+													<div class="table-responsive">
+														<div id="chartContainer" style="height: 450px; width: 100%;"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /Appointment Tab -->
+			
+									</div>
+									<!-- Tab Content -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>		
+			<!-- /Page Content -->
+   
+			<!-- Footer -->
+			<footer class="footer">
+				
+				<!-- Footer Top -->
+				<div class="footer-top">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-about">
+									<div class="footer-logo">
+										<h1 style="color: white;">Investo Services</h1>
+										<a href="#">
+											<img style="width: 45%; height: auto;" src="google-play-badge.png">
+										</a>
+										<a href="#">
+											<img style="width: 45%; height: auto;" src="https://connectpsychservices.com.au/wp-content/uploads/2020/03/apple-app-store.png">
+										</a>
+									</div>
+									<div class="footer-about-content">
+										<p>Copyright © 2020 Investo Services</p>
+										
+										<div class="social-icon">
+											<ul>
+												<li style="padding-left: 10%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-facebook-f"></i> </a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+												</li>
+												<li style="padding-left: 5%; padding-right: 5%;">
+													<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+												</li>
+											
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">General</h2>
+									<ul>
+										<li><a href="/login"><i class="fas fa-angle-double-right"></i> Login</a></li>
+										<li><a href="/register"><i class="fas fa-angle-double-right"></i> Register</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Graphs</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i>FAQs</a></li>
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-menu">
+									<h2 class="footer-title">Policies</h2>
+									<ul>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Terms & Conditions</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Help</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Coontact Us</a></li>
+										<li><a href="#"><i class="fas fa-angle-double-right"></i> Privacy</a></li>
+										<!-- <li><a href="#"><i class="fas fa-angle-double-right"></i> Doctor Dashboard</a></li> -->
+									</ul>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+							<div class="col-lg-3 col-md-6">
+							
+								<!-- Footer Widget -->
+								<div class="footer-widget footer-contact">
+									<h2 class="footer-title">Contact Us</h2>
+									<div class="footer-contact-info">
+										<div class="footer-address">
+											<span><i class="fas fa-map-marker-alt"></i></span>
+											<p> 1234  ABC Street, XYZ,<br> India </p>
+										</div>
+										<p>
+											<i class="fas fa-phone-alt"></i>
+											+91 9166784668
+										</p>
+										<p class="mb-0">
+											<i class="fas fa-envelope"></i>
+											abc@email.com
+										</p>
+									</div>
+								</div>
+								<!-- /Footer Widget -->
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- /Footer Top -->
+				
+			</footer>
+			<!-- /Footer -->
+		   
+		</div>
+		<!-- /Main Wrapper -->
+	  
+		<!-- jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- Sticky Sidebar JS -->
+        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+		
+		<!-- Custom JS -->
+		<script src="assets/js/script.js"></script>
+		
+	</body>
+
+</html>
