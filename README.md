@@ -1,4 +1,4 @@
-# flipr
+# Flipr
 This is a stock market app.
 Let me walk you thrugh the entire application.
 
